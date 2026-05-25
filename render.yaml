@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ku-best-downloader
+    runtime: node
+    buildCommand: npm install && pip3 install yt-dlp || true
+    startCommand: node server.js
+    envVars:
+      - key: ADMIN_PIN
+        value: 111222
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
